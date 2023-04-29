@@ -19,7 +19,8 @@
 import React, { useState } from 'react'
 
 const UseState = () => {
-  const [{ count1, count2 }, setCount] = useState({ count1: 10, count2: 20 })
+  const [count1, setCount1] = useState(10)
+  const [count2, setCount2] = useState(20)
 
   return (
     <div className='w-full flex justify-center items-center flex-col'>
@@ -27,15 +28,14 @@ const UseState = () => {
         UseState
       </h4>
       <button
-        onClick={() =>
-          setCount(currentState => ({
-            count1: currentState.count1 + 1,
-            count2: currentState.count2
-          }))}>
+        onClick={() => {
+          setCount1(c => c + 1)
+          setCount2(c => c + 1)
+        }}>
         +
       </button>
       <div>count: {count1}</div>
-      <div>count: {count2}2</div>
+      <div>count: {count2}</div>
     </div>
   )
 }

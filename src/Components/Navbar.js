@@ -1,12 +1,14 @@
 import React from 'react'
+
+import { Link } from 'react-router-dom'
 import Logo from "../Images/logo.png"
 
 const Navbar = () => {
   return (
     <nav className='flex justify-between px-20 items-center w-full mb-10 pt-3'>
-        <>
+        <Link to="/">
             <img src={Logo} alt='Logo' className='w-14 h-auto object-contain' />
-        </>
+        </Link>
         <div className=' flex gap-4'>
             <button
                 type='button'
