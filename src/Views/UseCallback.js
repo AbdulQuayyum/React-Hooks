@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Hello from '../Utilities/Hello'
+import { Hello } from '../Utilities/Hello'
 
 const UseCallback = () => {
   const [count, setCount] = useState(() => JSON.parse(localStorage.getItem("count")))
