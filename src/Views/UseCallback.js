@@ -22,7 +22,7 @@ const UseCallback = () => {
       <Hello increment={increment} />
       <div>count: {count}</div>
       {randomNumbers.map(n => {
-        return <Square onClick={() => increment(n)} n={n} key={n}/>
+        return <Square increment={increment} n={n} key={n} />
       })}
     </div>
   )
