@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
-import { UseFetch } from '../Components/Index'
+import { UseFetch, UseMeasure } from '../Components/Index'
 
 const Index = () => {
     // const renders = useRef(0)
@@ -14,13 +14,10 @@ const Index = () => {
     useEffect(() => {
         localStorage.setItem("count", JSON.stringify(count))
     }, [count])
+    
 
-    const [rect, setRect] = useState({})
-    const DivRef = useRef()
 
-    useLayoutEffect(() => {
-        setRect(DivRef.current.getBoundingClientRect())
-    }, [data])
+    const [rect, DivRef] = UseMeasure([data])
 
     return (
         <div>

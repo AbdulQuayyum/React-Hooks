@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
 
-export const UseMeasure = (ref, deps) => {
+export const UseMeasure = (deps) => {
     const [rect, setRect] = useState({})
+    const myRef = useRef()
 
     useLayoutEffect(() => {
-        setRect(ref.current.getBoundingClientRect())
-    }, [deps])
+        setRect(myRef.current.getBoundingClientRect())
+    }, deps)
 
-    return rect
+    return [rect, myRef]
 }
