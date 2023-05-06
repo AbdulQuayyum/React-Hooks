@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react'
+import React, { useState, useRef } from 'react'
 import { UseForm, UseMeasure } from '../Components/Index'
 import Index from '../Utilities/Index'
 
