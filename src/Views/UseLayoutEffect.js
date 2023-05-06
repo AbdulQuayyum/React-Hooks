@@ -9,7 +9,7 @@ const UseLayoutEffect = () => {
   const InputRef = useRef()
 
   useLayoutEffect(() => {
-    console.log(InputRef.getBoundingClientRect())
+    console.log(InputRef.current.getBoundingClientRect())
   }, [])
 
   return (
