@@ -35,6 +35,11 @@ const UseEffect = () => {
   return (
     <div className='flex flex-col items-center justify-center w-full gap-y-4 '>
       <h4> UseEffect </h4>
+      <p>In React, the useEffect hook is used to manage side effects in functional components. Side effects refer to any code that interacts with the outside world, such as fetching data from an API or updating the DOM. The useEffect hook allows you to specify a function that runs after the component renders, and optionally after subsequent updates. This function can handle any necessary side effects, such as fetching data or subscribing to events.
+
+        The useEffect hook takes two arguments: the first is the function to be executed after the component renders, and the second is an optional array of dependencies. If the dependency array is not specified, the effect function runs after every component render. If the dependency array is specified, the effect function only runs when the values in the dependency array change. This can be used to optimize performance by preventing unnecessary re-renders.
+
+        When the component unmounts, the useEffect hook can optionally return a cleanup function to perform any necessary cleanup, such as unsubscribing from events or canceling API requests. The cleanup function is executed before the component unmounts and before any subsequent effects are run.</p>
       <div> {loading ? "loading..." : data} </div>
       <div>count: {count}</div>
       <h4>Click for random fact about numbers</h4>
