@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Routes, Route } from "react-router-dom"
 
 import { Home, UseCallback, UseContext, UseContext2, UseEffect, UseLayoutEffect, UseMemo, UseReducer, UseRef, UseState } from "../Views/Index"
@@ -7,10 +7,11 @@ import { messages } from '../Utilities/Data'
 
 const MainRoutes = () => {
     const [value, setValue] = useState("blah blah blah")
+    const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
 
     return (
         <UserContext.Provider value={messages}>
-            <UserContext2.Provider value={{ value, setValue}}>
+            <UserContext2.Provider value={providerValue}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/UseCallback" element={<UseCallback />} />
