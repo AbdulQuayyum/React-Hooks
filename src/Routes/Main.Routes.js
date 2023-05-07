@@ -6,8 +6,8 @@ import { UserContext, UserContext2 } from '../Utilities/UserContext'
 import { messages } from '../Utilities/Data'
 
 const MainRoutes = () => {
-    const [value, setValue] = useState("blah blah blah")
-    const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
+    const [user, setUser] = useState(null)
+    const providerValue = useMemo(() => ({ user, setUser }), [user, setUser])
 
     return (
         <UserContext.Provider value={messages}>
