@@ -3,18 +3,11 @@ import { Routes, Route } from "react-router-dom"
 
 import { Home, UseCallback, UseContext, UseContext2, UseEffect, UseLayoutEffect, UseMemo, UseReducer, UseRef, UseState } from "../Views/Index"
 import { UserContext } from '../Utilities/UserContext'
-
-const useContextMessage = `In React, useContext is a hook that allows you to access data that has been passed down through the component tree via the Context API.
-
-When you use useContext, you pass in the Context object that you want to access, and the hook returns the current value of that context.
-
-This can be useful for sharing data between components that are not directly connected via props, without the need for prop drilling.
-
-Overall, useContext can be a useful tool for simplifying the sharing of data between components in a React application.`
+import { messages } from '../Utilities/Data'
 
 const MainRoutes = () => {
     return (
-        <UserContext.Provider value={useContextMessage}>
+        <UserContext.Provider value={messages}>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/UseCallback" element={<UseCallback />} />
