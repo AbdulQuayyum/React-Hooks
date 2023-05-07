@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
-import { UserContext } from "../Utilities/UserContext"
+import { UserContext, UserContext2 } from "../Utilities/UserContext"
 
 const UseContext = () => {
   const message = useContext(UserContext)
+  const { value, setValue } = useContext(UserContext2)
 
   return (
     <div className='flex flex-col items-center justify-center w-full gap-y-4 '>
       <h4> UseContext </h4>
       {message.useContextMessage}
+      <div className='flex flex-col items-center justify-center w-full gap-y-4 '>
+        {value}
+      </div>
     </div>
   )
 }

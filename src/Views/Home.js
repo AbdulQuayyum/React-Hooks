@@ -28,6 +28,9 @@ const Home = () => {
       <Link to="/UseContext" className='px-8 py-3 border border-black hover:text-gray-500 hover:border-gray-500 rounded-3xl'>
         UseContext
       </Link>
+      <Link to="/UseContext2" className='px-8 py-3 border border-black hover:text-gray-500 hover:border-gray-500 rounded-3xl'>
+        UseContext2
+      </Link>
     </div>
   )
 }
