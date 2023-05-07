@@ -41,10 +41,14 @@ import React, { useReducer, useState } from 'react'
 function reducer(state, action) {
   switch (action.type) {
     case "add-todo":
-      return { todos: [...state.todos, { text: action.text, completed: false }] }
+      return {
+        todos: [...state.todos, { text: action.text, completed: false }],
+        todoCount: state.todoCount + 1
+      }
     case "toggle-todo":
       return {
-        todos: state.todos.map((t, index) => index === action.index ? { ...t, completed: !t.completed } : t)
+        todos: state.todos.map((t, index) => index === action.index ? { ...t, completed: !t.completed } : t),
+        todoCount: state.todoCount
       }
     default:
       return state
@@ -52,7 +56,7 @@ function reducer(state, action) {
 }
 
 const UseReducer = () => {
-  const [{ todos }, dispatch] = useReducer(reducer, { todos: [] })
+  const [{ todos, todoCount }, dispatch] = useReducer(reducer, { todos: [], todoCount: 0 })
   const [text, setText] = useState()
 
   return (
@@ -85,6 +89,7 @@ const UseReducer = () => {
           submit
         </button>
       </form>
+      <div>Number of todos: {todoCount}</div>
       {/* <pre> {JSON.stringify(todos, null, 2)} </pre> */}
       {todos.map((t, index) => (
         <div
